@@ -1,0 +1,50 @@
+@import 'mixins';
+@import 'variables';
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+#projects li{
+    @media screen and (max-width: 600px){
+        @include grid(2, 2%); 
+    }
+    @media screen and (min-width: 600px){
+        @include grid(4, 2%); 
+    }
+   img{
+       width: 100%;
+   }
+}
+
+#search{
+    width: 100%;
+    position: relative;
+    input{
+        border-color: transparent;
+        padding: 5px 10px;
+        @include search-bl;
+    }
+    button{
+        margin-left: 10px;
+        padding: 5px 20px;
+        background-color: skyblue;
+        border-color: lighten(skyblue, 1);
+        @include search-bl;
+    }
+    table{
+        position: absolute;
+        transition: 0.2s;
+        top: 91px;
+        left: 2px;
+        width: 262px;
+        border-radius: 5px;
+        padding: 10px 10px;
+        background-color: white;
+        box-shadow: 1px 5px 10px 1px gray;
+        a{
+            cursor: pointer;
+        }
+    }
+}
